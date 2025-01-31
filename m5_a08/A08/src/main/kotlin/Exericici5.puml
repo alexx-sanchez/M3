@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+enum PosicionFutbol {
+    Portero
+    Defensor
+    Centrocampista
+    Delantero
+}
+
+class Jugador {
+    --Atributs--
+    - nom: String
+    - posicio: PosicionFutbol
+    - golsMarcats: Int
+    - assistencies: Int
+
+    --Metodes--
+    + marcaGol()
+    + assisteix()
+}
+
+class Equip {
+    --Atributs--
+        - nomEquip: String
+        - nomEntrenador: String
+        - jugadors: MutableList<Jugador>
+        - punts: Int
+
+    --Metodes--
+        + constructor(String, String)
+        + afegirJugador(Jugador)
+        + sumarPunts(Int)
+}
+
+class Entrenador {
+    --Atributs--
+        - nom: String
+        - experiencia: String
+
+    --Metodes--
+        + entrenar()
+        + pensarJugada()
+}
+
+Jugador *-down- PosicionFutbol
+Equip *-right-- Jugador
+Entrenador *-- Equip
+
+@enduml

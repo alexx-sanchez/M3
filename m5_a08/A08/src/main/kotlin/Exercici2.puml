@@ -1,0 +1,28 @@
+@startuml
+class Animal {
+    -- Atributs --
+    - espècie: String
+    - edat: Int
+    - nom: String
+    - hàbitat: String
+
+    -- Mètodes --
+    + moure's(): void
+    + emetreSo(): void
+    + menjar(): void
+}
+
+class Visitant {
+    -- Atributs --
+    - nom: String
+    - edat: Int
+    - dataDeVisita: Date
+    - animalsVisitats: List<Animal>
+
+    -- Mètodes --
+    + afegirAnimalVisitats(animal: Animal): void
+}
+
+Animal *-- Visitant
+
+@enduml

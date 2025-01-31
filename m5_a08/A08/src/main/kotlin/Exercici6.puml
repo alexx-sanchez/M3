@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Amic {
+    --Atributs--
+        - nom: String
+        - presupost: Float
+        - begudaPreferida: Beguda
+        - llistaBegudes: MutableList<Beguda>
+
+    --Metodes--
+        + constructor(String, Float, Beguda, MutableList<Beguda>)
+        + pagarEntrada(Float)
+        + demanarBeguda(Beguda)
+        + afegirBeguda(Beguda)
+}
+
+class Beguda {
+    --Atributs--
+        - nom: String
+        - percentatgeAlcohol: Float
+        - preu: Float
+
+    --Metodes--
+        + constructor(String, Float, Float)
+}
+
+class Discoteca {
+    --Atributs--
+        - nom: String
+        - preuEntrada: Float
+        - llistaBegudes: MutableList<Beguda>
+        - amicsEntrats: MutableList<Amic>
+        - aforo: Int
+
+    --Metodes--
+        + constructor(String, Float, Int)
+        + constructor(String, Float, MutableList<Beguda>, MutableList<Amic>, Int)
+        + getBegudes(): MutableList<Beguda>
+        + registrarAmic(Amic)
+        + getAforo(): Int
+        + setAforo(Int)
+        + comprabarAforo(): Boolean
+}
+
+Amic "1" o-- "N" Beguda: Beu
+Discoteca "N" o-up- "M" Amic: Assiteix
+Discoteca "N" o-left- "M" Beguda: Serveix
+
+@enduml

@@ -15,16 +15,18 @@ class CartaPokemon{
         - puntsDefensa: Int
 
     -- Metodes --
-        + constructor(nom: String, tipus: TipusPokemons, puntsAtac : Int, puntsDefensa : Int)
+        + constructor(nom: String, tipus: TipusPokemons, puntsAtac: Int, puntsDefensa: Int)
         + getNom(): String
-        + poderTotal(puntsAtac : Int, puntsDefensa : Int)
-        + compararPoder(poderTotal(puntsAtac, puntsDefensa)): Int
+        + poderTotal(puntsAtac: Int, puntsDefensa: Int): Int
+        + compararPoder(poderTotal(puntsAtac, puntsDefensa)): String
 }
 
 class JugadorPokemon{
     -- Atributs --
-        - nom : String
-        - cartes : List<CartaPokemon>
+        - nom: String
+        - cartes: List<CartaPokemon>
+    --Metodes--
+    + contructor(String, List<CartaPokemon>)
 }
 
 CartaPokemon o-up- JugadorPokemon
